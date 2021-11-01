@@ -7,6 +7,25 @@ const AllBookings = () => {
             .then(res => res.json())
             .then(data => setBookings(data));
     }, [])
+    const handleConfirmBooking = id => {
+        const confirmBooking = { status: "Confirmed" };
+
+        const url = `https://limitless-cliffs-10924.herokuapp.com/my-bookings/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'appication/json'
+            },
+            body: JSON.stringify(confirmBooking)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modification > 0) {
+                    alert('Service Updated Successfully')
+                }
+                window.location.reload();
+            })
+    }
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure to delete');
         if (proceed) {
@@ -45,8 +64,11 @@ const AllBookings = () => {
                                     <p className="card-text">Date To Go: {booking.userDate}</p>
                                     <p className="card-text">Phone: {booking.userPhone}</p>
                                     <p>Status: {booking?.status === "Pending" ? <span className="p-2 bg-danger text-white rounded">Pending</span> : <span className="p-2 rounded bg-success text-white">Confirmed</span>}</p>
+                                    {
+                                        booking?.status === "Pending" ? <button className="btn btn-success me-2" onClick={() => handleConfirmBooking(booking._id)}>Confirm</button> : <button className="btn btn-success me-2 disabled">Confirmed</button>
+                                    }
+                                    <button className="btn btn-danger" onClick={() => handleDelete(booking._id)}>Delete</button>
                                 </div>
-                                <button className="btn btn-danger" onClick={() => handleDelete(booking._id)}>Delete</button>
                             </div>
                         </div>)
                     }
