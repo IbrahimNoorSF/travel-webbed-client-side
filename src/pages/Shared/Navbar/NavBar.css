@@ -1,0 +1,41 @@
+@media only screen and (max-width: 640px){
+    .button-left{
+        margin-left: 0 !important;
+        margin-bottom: 10px !important;
+    }
+}
+.button-login{
+    background-color: rgb(255, 78, 80);
+    cursor: pointer;
+    outline: none;
+    box-shadow: none;
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    min-height: 0px;
+    min-width: 0px;
+    max-height: none;
+    max-width: none;
+    text-align: left;
+    line-height: 14px;
+    letter-spacing: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    border-color: transparent;
+    padding: 15px 25px;
+    border-radius: 10px;
+    transform-origin: 98.8047px 24px;
+    border-style: none;
+    transition: .5s ease;
+}
+.button-login:hover{
+    background-color: rgb(255, 255, 255);
+    color: rgb(255, 78, 80);
+    outline: 1px solid rgb(255, 78, 80);
+}
+
+.button-left{
+    margin-left: 510px;
+}
