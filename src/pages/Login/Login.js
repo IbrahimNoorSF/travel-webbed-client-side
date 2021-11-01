@@ -45,12 +45,12 @@ const Login = () => {
                     <h1 className="text-center mb-4">Please <span className="text-danger">Login</span></h1>
                     <div className="form-outline-danger mb-4">
                         <input type="email" id="form2Example1" className="form-control" onBlur={handleEmail} required />
-                        <label className="form-label" for="form2Example1">Email address</label>
+                        <label className="form-label" htmlFor="form2Example1">Email address</label>
                     </div>
 
                     <div className="form-outline-danger mb-4">
                         <input type="password" id="form2Example2" className="form-control" onBlur={handlePassword} required />
-                        <label className="form-label" for="form2Example2">Password</label>
+                        <label className="form-label" htmlFor="form2Example2">Password</label>
                     </div>
                     <p className="text-danger">{errorMessage}</p>
                     <button type="submit" className="button-login mb-4" onClick={handleLoginButton}>Sign in</button>

@@ -34,7 +34,7 @@ const AllBookings = () => {
                 {
                     bookings === [] ? <p className="text-muted text-center">If some one orders it will Appear here</p> : <p className="text-muted text-center mb-4">Total Orders Found: {bookings.length}</p>
                 }
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         bookings.map(booking => <div className="col">
                             <div className="card text-center">

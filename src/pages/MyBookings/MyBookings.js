@@ -19,7 +19,7 @@ const MyBookings = () => {
             {
                 bookings === [] ? <p className="text-muted text-center">If you order, it will Appear here</p> : <p className="text-muted text-center mb-4">Total Orders Found: {myDatas.length}</p>
             }
-            <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
                     bookings.filter(myData => myData.userEmail === user.email).map(booking => <MyBooking key={booking._id} booking={booking}></MyBooking>)
                 }
