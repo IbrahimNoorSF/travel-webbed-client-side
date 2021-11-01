@@ -55,7 +55,7 @@ const AllBookings = () => {
                 }
                 <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
-                        bookings.map(booking => <div className="col">
+                        bookings.map(booking => <div key={booking._id} className="col">
                             <div className="card text-center">
                                 <div className="card-body">
                                     <h5 className="card-title">Order Id: {booking._id}</h5>

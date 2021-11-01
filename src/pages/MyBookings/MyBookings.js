@@ -12,7 +12,7 @@ const MyBookings = () => {
             .then(res => res.json())
             .then(data => setBookings(data));
     }, [])
-    const myDatas = bookings.filter(myData => myData.userEmail === user.email);
+    const myDatas = bookings.filter(myData => myData.userName === user.displayName);
     return (
         <div className="mt-5 container">
             <h1 className="text-center mb-4">Your <span className="text-danger">Booking</span> History</h1>
@@ -21,7 +21,7 @@ const MyBookings = () => {
             }
             <div className="row row-cols-1 row-cols-md-3 g-4">
                 {
-                    bookings.filter(myData => myData.userEmail === user.email).map(booking => <MyBooking key={booking._id} booking={booking}></MyBooking>)
+                    bookings.filter(myData => myData.userName === user.displayName).map(booking => <MyBooking key={booking._id} booking={booking}></MyBooking>)
                 }
             </div>
         </div>
